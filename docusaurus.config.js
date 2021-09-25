@@ -31,8 +31,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               'Thoughts and examples for building modern applications with React (web and mobile/native) front-ends and Serverless, Cloud (AWS, Firebase/Google) based back-ends.',
             showReadingTime: true,
             // Please change this to your repo.
-            editUrl:
-              'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+            editUrl: 'https://github.com/peterdyer7/fullsapps-blog/',
             feedOptions: {
               type: 'all',
               title: 'FullsApps Feed',
@@ -83,7 +82,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               position: 'left',
             },
             {
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/peterdyer7/fullsapps-blog',
               label: 'GitHub',
               position: 'right',
             },
