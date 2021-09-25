@@ -78,6 +78,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               position: 'left',
             },
             {
+              href: '/markdown-page',
+              label: 'Projects',
+              position: 'left',
+            },
+            {
               href: 'https://github.com/facebook/docusaurus',
               label: 'GitHub',
               position: 'right',
