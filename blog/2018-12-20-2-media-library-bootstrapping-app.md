@@ -5,15 +5,13 @@ authors: peter
 tags: [Create React App, ESLint, Prettier]
 ---
 
-## Code
-
-<https://github.com/peterdyer7/media-library/tree/2.BootstrappingTheApp>
-
 ## Choices
 
 I am using Create React App to bootstrap the application. The will be a few purists out there that frown on this but they need to get with the times. The purists would opt for more control, better "understandability", etc. At this point in time I can't imagine their are many people out there that don't believe Create React App is a solid way to bootstrap your React application. It provides a tremendous amount of value. It saves me from writing a ton of code. This is directly in line with my philosophy - if there is a good tool available that saves time, use it.
 
 If you are using Create React App, I recommend you don't use it blindly and that you read (and follow) the user guide: <https://facebook.github.io/create-react-app/> . The guide is excellent and very useful. It provides some very useful direction for things like testing, styling, code formatting, etc.
+
+<!--truncate-->
 
 ## ESLint and Prettier
 
@@ -147,3 +145,7 @@ I'm not going to say anything about Git and Github as we move through this proje
 ## Next
 
 I think in the last post I said we would start coding in this post. It doesn't feel like what we did qualifies but we have set a solid foundation for writing decent code going forward. In the next post we will get our styling library setup.
+
+## Code
+
+<https://github.com/peterdyer7/media-library/tree/2.BootstrappingTheApp>

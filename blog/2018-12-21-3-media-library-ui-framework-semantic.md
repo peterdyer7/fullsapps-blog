@@ -5,10 +5,6 @@ authors: peter
 tags: [Semantic UI React]
 ---
 
-## Code
-
-<https://github.com/peterdyer7/media-library/tree/3.UIFramework>
-
 ## Application Requirements
 
 We have some basic requirements when it comes to styling our application.
@@ -18,6 +14,8 @@ We have some basic requirements when it comes to styling our application.
 3. It is not required that our application have a unique or independent look and feel. In fact, because of the utilitarian nature of our application, it will likely aid users if we follow patterns they are already familiar with in other applications.
 
 The look and feel of our application, and even the usability, may need to change in time. So, we will make choices that focus on moving quickly, and adjust in the future if required.
+
+<!--truncate-->
 
 ## Choices
 
@@ -72,3 +70,7 @@ We will see the Semantic UI components throughout the application as we begin to
 ## Next
 
 Once again, I probably under-delivered on getting moving with some meaningful code, but we will get there. In the next post I may disappoint once more as I plan to focus on testing and getting the bits we will need for testing setup.
+
+## Code
+
+<https://github.com/peterdyer7/media-library/tree/3.UIFramework>
