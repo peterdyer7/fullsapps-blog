@@ -5,7 +5,7 @@ authors: peter
 tags: [Create React App, ESLint, Prettier]
 ---
 
-## Choices
+## Intro
 
 I am using Create React App to bootstrap the application. The will be a few purists out there that frown on this but they need to get with the times. The purists would opt for more control, better "understandability", etc. At this point in time I can't imagine their are many people out there that don't believe Create React App is a solid way to bootstrap your React application. It provides a tremendous amount of value. It saves me from writing a ton of code. This is directly in line with my philosophy - if there is a good tool available that saves time, use it.
 

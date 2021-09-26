@@ -9,7 +9,7 @@ tags: [Enzyme, Jest, jest-enzyme]
 
 I am going to replace the testing framework outlined in this post in a subsequent post (7. Media Library). The information outlined here is still relevant. The part that gets replaced is Enzyme (and its dependencies). You may want to skip the Walk Through, or if you prefer you can follow the Walk Through and we will eventually uninstall the Enzyme bits. The reason for this change is explained in subsequent posts.
 
-## Choices
+## Intro
 
 I am going to assume we all agree on the merits of testing. My goal is 100% automated test coverage with any project. We will probably take a few shortcuts in this project and not test everything (or, at least not test everything as deeply as we may want). In keeping with our "move quickly" philosophy the tests will probably remain light until something indicates further investment in testing is warranted. For example, if a bug is reported, I will often fix the bug and try to write a test that would have uncovered the bug.
 

@@ -5,7 +5,7 @@ authors: peter
 tags: [React Router]
 ---
 
-## Choices
+## Intro
 
 Our application is going to use React Router (<https://github.com/ReactTraining/react-router>). I think of React Router as the defacto standard for routing in React. It is currently at version 4 and is well used and respected by the React community.
 

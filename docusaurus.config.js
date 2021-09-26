@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   module.exports = {
     title: 'FullsApps',
     tagline:
-      'Thoughts and examples for building modern applications with React (web and mobile/native) front-ends and serverless, cloud based (AWS, Firebase/Google) back-ends.',
+      'Fullstack Applications development, with React (web and mobile/native) front-ends and serverless, cloud based (AWS, Firebase/Google) back-ends',
     url: 'https://fullsapps.com',
     baseUrl: '/',
     onBrokenLinks: 'throw',
@@ -29,7 +29,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             routeBasePath: 'blog',
             blogTitle: 'FullsApps - Fullstack, Applications - blog!',
             blogDescription:
-              'Thoughts and examples for building modern applications with React (web and mobile/native) front-ends and serverless, cloud based (AWS, Firebase/Google) back-ends.',
+              'Fullstack Applications development, with React (web and mobile/native) front-ends and serverless, cloud based (AWS, Firebase/Google) back-ends',
             showReadingTime: true,
             editUrl: 'https://github.com/peterdyer7/fullsapps-blog/tree/main/',
             feedOptions: {

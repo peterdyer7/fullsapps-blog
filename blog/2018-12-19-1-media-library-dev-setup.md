@@ -5,7 +5,7 @@ authors: peter
 tags: [Javascript, Typescript, Visual Studio Code]
 ---
 
-## Choices
+## Intro
 
 I am going to be using Visual Studio Code as my code editor. This seems like the most popular choice these days and I have been using it for quite a while and like it. I am a bit of a dinosaur and still run Windows. If you do use Visual Studio Code on Windows, make sure you always Run as Administrator - it will reduce the number of weird errors you get. I am going to walk through my particular setup in more detail below.
 
