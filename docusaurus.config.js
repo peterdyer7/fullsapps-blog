@@ -62,6 +62,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               label: 'Topics',
               items: [
                 {
+                  href: '/media-library',
+                  label: 'Media Library',
+                },
+                {
                   href: '/helloMarkdown',
                   label: 'Hello MD',
                 },
