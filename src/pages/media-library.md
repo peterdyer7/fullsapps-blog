@@ -10,6 +10,7 @@ Media Library was created 3 years ago. The technology and the thought process di
 
 With that said the original posts and technology are preserved here for posterity.
 
+- [0. Media Library - Introduction](http://localhost:3000/blog/0-media-library-introduction)
 - [1. Media Library - Dev Setup](http://localhost:3000/blog/1-media-library-dev-setup)
 - [2. Media Library - Bootstrapping the App - Create React App](http://localhost:3000/blog/2-media-library-bootstrapping-app)
 - [3. Media Library - UI Framework - Semantic UI (React)](http://localhost:3000/blog/3-media-library-ui-framework-semantic)
