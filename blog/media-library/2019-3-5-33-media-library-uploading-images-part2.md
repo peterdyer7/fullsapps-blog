@@ -1,5 +1,5 @@
 ---
-slug: 33-media-library-uploading=images-part2
+slug: 33-media-library-uploading-images-part2
 title: 33. Media Library - Uploading Images, Part 2
 authors: peter
 tags: [react-dropzone, react-select]
@@ -102,8 +102,7 @@ const mapStateToProps = (state, ownProps) => ({
   settingList: state.settings.settings[ownProps.setting],
 });
 
-const SimpleSettingSelectContainer =
-  connect(mapStateToProps)(SimpleSettingSelect);
+const SimpleSettingSelectContainer = connect(mapStateToProps)(SimpleSettingSelect);
 
 export default SimpleSettingSelectContainer;
 ```
@@ -116,15 +115,7 @@ import PropTypes from 'prop-types';
 import CreatableSelect from 'react-select/lib/Creatable';
 import { Form, Label } from 'semantic-ui-react';
 
-export default function TagsSelect({
-  tags,
-  boundSettingAdd,
-  onChange,
-  onBlur,
-  value,
-  error,
-  touched,
-}) {
+export default function TagsSelect({ tags, boundSettingAdd, onChange, onBlur, value, error, touched }) {
   const [isLoading, setIsLoading] = useState(false);
   const [options, setOptions] = useState([]);
 
@@ -242,11 +233,7 @@ export default function UploadImageForm({
               }
             : null
           : null,
-        tags: image
-          ? image.tags
-            ? image.tags.map((t) => ({ value: t, label: t }))
-            : null
-          : null,
+        tags: image ? (image.tags ? image.tags.map((t) => ({ value: t, label: t })) : null) : null,
       }}
       validationSchema={Yup.object().shape({
         caption: Yup.string().required(errors.REQ),
@@ -258,9 +245,7 @@ export default function UploadImageForm({
           imageUpload(propertyId, imageFile, {
             caption: values.caption,
             primaryCategory: values.primaryCategory.value,
-            secondaryCategory: values.secondaryCategory
-              ? values.secondaryCategory.value
-              : null,
+            secondaryCategory: values.secondaryCategory ? values.secondaryCategory.value : null,
             tags: values.tags ? values.tags.map((t) => t.value) : null,
           });
           handleReset();
@@ -270,9 +255,7 @@ export default function UploadImageForm({
             ...image,
             caption: values.caption,
             primaryCategory: values.primaryCategory.value,
-            secondaryCategory: values.secondaryCategory
-              ? values.secondaryCategory.value
-              : null,
+            secondaryCategory: values.secondaryCategory ? values.secondaryCategory.value : null,
             tags: values.tags ? values.tags.map((t) => t.value) : null,
           });
         }
@@ -311,9 +294,7 @@ export default function UploadImageForm({
                 onBlur={handleBlur}
                 value={values.caption}
               />
-              {!!errors.caption && touched.caption && (
-                <Label pointing>{errors.caption}</Label>
-              )}
+              {!!errors.caption && touched.caption && <Label pointing>{errors.caption}</Label>}
             </Form.Field>
             <SimpleSettingSelectContainer
               value={values.primaryCategory}
@@ -340,13 +321,7 @@ export default function UploadImageForm({
               error={errors.tags}
               touched={touched.tags}
             />
-            <Button
-              type='submit'
-              fluid
-              size='large'
-              primary
-              disabled={!isValid || isSubmitting}
-            >
+            <Button type='submit' fluid size='large' primary disabled={!isValid || isSubmitting}>
               {isUpload ? <>Upload</> : <>Update</>}
             </Button>
           </Form>
@@ -393,12 +368,7 @@ export default function UploadImage({ propertyId, imageUpload }) {
   return (
     <>
       <div className='dropzone'>
-        <Dropzone
-          accept='image/jpeg, image/png'
-          disabled={false}
-          multiple={false}
-          onDrop={onDrop}
-        >
+        <Dropzone accept='image/jpeg, image/png' disabled={false} multiple={false} onDrop={onDrop}>
           {({ getRootProps, getInputProps }) => (
             <div
               {...getRootProps()}
@@ -412,11 +382,7 @@ export default function UploadImage({ propertyId, imageUpload }) {
               }}
             >
               <input {...getInputProps()} />
-              <Header
-                size='medium'
-                textAlign='center'
-                style={{ paddingTop: '1em' }}
-              >
+              <Header size='medium' textAlign='center' style={{ paddingTop: '1em' }}>
                 Drop image here, or click to select file to upload.
               </Header>
               <Header size='small' textAlign='center'>
@@ -427,9 +393,7 @@ export default function UploadImage({ propertyId, imageUpload }) {
         </Dropzone>
       </div>
 
-      {rejected[0] && (
-        <Message error>{rejected[0].name} is not a supported file type</Message>
-      )}
+      {rejected[0] && <Message error>{rejected[0].name} is not a supported file type</Message>}
 
       {accepted[0] && (
         <UploadImageForm
@@ -457,16 +421,11 @@ import { connect } from 'react-redux';
 
 import AdminPropertyImages from '../../../../../components/admin/AdminProperty/AdminPropertyImages/AdminPropertyImages';
 
-import {
-  imagesPropertyFetch,
-  imageUpload,
-} from '../../../../../shared/redux/actions/images';
+import { imagesPropertyFetch, imageUpload } from '../../../../../shared/redux/actions/images';
 import { fetchSettings } from '../../../../../shared/redux/actions/settings';
 
 const mapStateToProps = (state, ownProps) => ({
-  images: state.images.images.filter((image) =>
-    image.properties.includes(ownProps.propertyId)
-  ),
+  images: state.images.images.filter((image) => image.properties.includes(ownProps.propertyId)),
   loadingImages: state.images.loading,
   errorImages: state.images.error,
   settings: state.settings.settings,
@@ -475,16 +434,12 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  boundImageUpload: (propertyId, image, metadata) =>
-    dispatch(imageUpload(propertyId, image, metadata)),
+  boundImageUpload: (propertyId, image, metadata) => dispatch(imageUpload(propertyId, image, metadata)),
   boundImagesPropertyFetch: (id) => dispatch(imagesPropertyFetch(id)),
   boundSettingsFetch: (type) => dispatch(fetchSettings(type)),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AdminPropertyImages);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminPropertyImages);
 ```
 
 Now we can use these props and display the UploadImage component.
@@ -549,10 +504,7 @@ export default function AdminPropertyImages({
                 <Icon name='upload' size='huge' />
                 Upload Image
               </Header>
-              <UploadImage
-                propertyId={propertyId}
-                imageUpload={boundImageUpload}
-              />
+              <UploadImage propertyId={propertyId} imageUpload={boundImageUpload} />
             </Segment>
           </Grid.Column>
         </Grid.Row>

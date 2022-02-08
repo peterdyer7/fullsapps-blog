@@ -162,13 +162,13 @@ My takeaway with regard to both the Simulator and the Emulator is that you shoul
 
 #### Documentation
 
-If you need to brush up on RegEx. I find this reference helpful - <https://www.rexegg.com/regex-quickstart.html>
+If you need to brush up on RegEx. I find this [reference](https://www.rexegg.com/regex-quickstart.html) helpful.
 
-Get started with Cloud Firestore Security Rules - <https://www.fullsapps.com/2019/01/14-media-library-state-login.html>
+[Get started with Cloud Firestore Security Rules](/blog/14-media-library-state-login)
 
-Good example of different rules - <https://firebase.google.com/docs/firestore/security/insecure-rules>
+[Good example of different rules](https://firebase.google.com/docs/firestore/security/insecure-rules)
 
-ACL style security discussed in detail - <https://firebase.google.com/docs/firestore/solutions/role-based-access>
+[ACL style security discussed in detail](https://firebase.google.com/docs/firestore/solutions/role-based-access)
 
 ## Walk Through
 

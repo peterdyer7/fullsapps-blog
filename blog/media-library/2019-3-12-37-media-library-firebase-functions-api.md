@@ -17,7 +17,7 @@ I'm making an assumption that if you are reading this you understand REST APIs a
 
 There are two main things we want to do with our REST API:
 
-1. I want to revisit our post on authorization (<https://www.fullsapps.com/2019/02/22-media-library-authorization.html>). I talked about creating custom auth claims and I mentioned that they require the admin-sdk. We have access to the admin-sdk in Firebase Functions so I am going to create an API endpoint that will let me add the admin auth claim to a specified user (this is our way of creating admin users).
+1. I want to revisit our post on [authorization](/blog/22-media-library-authorization-firestore-security-rules). I talked about creating custom auth claims and I mentioned that they require the admin-sdk. We have access to the admin-sdk in Firebase Functions so I am going to create an API endpoint that will let me add the admin auth claim to a specified user (this is our way of creating admin users).
 2. I also want to expose functionality through the API that lets me perform actions similar to the GUI. This will let me script the creation of data and will open the possibility to bulk loading data in the future.
 
 You will want to have a REST client handy while working on the API. That is, you will want to be able to call the API as you expose functionality to ensure it is working as expected. There are a ton of REST clients available, you could use Curl, I'm going to use Postman.
@@ -39,17 +39,11 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp();
 
-if (
-  !process.env.FUNCTION_NAME ||
-  process.env.FUNCTION_NAME === 'mediaLibraryFunction'
-) {
+if (!process.env.FUNCTION_NAME || process.env.FUNCTION_NAME === 'mediaLibraryFunction') {
   exports.mediaLibraryFunction = require('./media-library-function');
 }
 
-if (
-  !process.env.FUNCTION_NAME ||
-  process.env.FUNCTION_NAME === 'processImage'
-) {
+if (!process.env.FUNCTION_NAME || process.env.FUNCTION_NAME === 'processImage') {
   exports.processImage = require('./process-image');
 }
 
@@ -209,13 +203,7 @@ With that we can proceed to create all of the API endpoints and methods we want.
     "night",
     "morning"
   ],
-  "secondaryCategory": [
-    "Room view",
-    "Pool Side",
-    "Hallway",
-    "Stairs",
-    "Bathroom"
-  ],
+  "secondaryCategory": ["Room view", "Pool Side", "Hallway", "Stairs", "Bathroom"],
   "primaryCategory": [
     "Exterior view",
     "Lobby view",
@@ -290,10 +278,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 const authenticate = async (req, res, next) => {
-  if (
-    !req.headers.authorization ||
-    !req.headers.authorization.startsWith('Bearer ')
-  ) {
+  if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
     res.status(403).send('Unauthorized');
     return;
   }
@@ -343,9 +328,7 @@ app.get('/users', async (req, res) => {
 app.post('/users', async (req, res) => {
   try {
     const user = req.body;
-    const res1 = await admin
-      .auth()
-      .createUser({ email: user.email, password: user.password });
+    const res1 = await admin.auth().createUser({ email: user.email, password: user.password });
     const res2 = await db.collection('users').doc(res1.uid).set({
       email: user.email,
       company: user.company,
@@ -490,17 +473,12 @@ app.post('/images', async (req, res) => {
           },
         },
       };
-      const res1 = await admin
-        .storage()
-        .bucket()
-        .upload(`${image.sourceFolder}\\${image.fileName}`, options);
+      const res1 = await admin.storage().bucket().upload(`${image.sourceFolder}\\${image.fileName}`, options);
 
       const fileBucket = 'ml-dev-18bc4.appspot.com';
       const url = `https://firebasestorage.googleapis.com/v0/b/${fileBucket}/o/${encodeURIComponent(
         res1[0].name
-      )}?alt=media&token=${
-        res1[0].metadata.metadata.firebaseStorageDownloadTokens
-      }`;
+      )}?alt=media&token=${res1[0].metadata.metadata.firebaseStorageDownloadTokens}`;
       const dateNow = new Date();
       const res2 = await db.collection('images').doc(image.id).set({
         active: image.active,
@@ -561,20 +539,12 @@ app.delete('/images/:id', async (req, res) => {
 
     // delete files from storage (if the file exists)
     try {
-      await admin
-        .storage()
-        .bucket()
-        .file(`${image.id}/thumb_${image.name}`)
-        .delete();
+      await admin.storage().bucket().file(`${image.id}/thumb_${image.name}`).delete();
     } catch (e) {
       console.log(`${image.id}/thumb_${image.name} could not be deleted.`);
     }
     try {
-      await admin
-        .storage()
-        .bucket()
-        .file(`${image.id}/small_${image.name}`)
-        .delete();
+      await admin.storage().bucket().file(`${image.id}/small_${image.name}`).delete();
     } catch (e) {
       console.log(`${image.id}/small_${image.name} could not be deleted.`);
     }

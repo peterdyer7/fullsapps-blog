@@ -1,5 +1,5 @@
 ---
-slug: 32-media-library-uploading=images-part1
+slug: 32-media-library-uploading-images-part1
 title: 32. Media Library - Uploading Images, Part 1
 authors: peter
 tags: [Firebase Storage]
@@ -173,10 +173,7 @@ export default function ImagesList({ images, propertyId }) {
             </Button>
           </List.Content>
           {image.active ? (
-            <Image
-              size='small'
-              src={image.thumbUrl ? image.thumbUrl : image.url}
-            />
+            <Image size='small' src={image.thumbUrl ? image.thumbUrl : image.url} />
           ) : (
             <Loader active inline />
           )}

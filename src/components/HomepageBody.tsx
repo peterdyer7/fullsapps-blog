@@ -7,20 +7,13 @@ export default function HomepageBody() {
     <section>
       <div className='container'>
         <div className='row'>
-          <h2>Blog</h2>
           <div className={styles.buttons}>
-            <Link
-              className='button button--secondary button--lg'
-              to='/blog/archive'
-            >
-              Archive
+            <Link className='button button--secondary button--lg' to='/blog/archive'>
+              Blog Archive
             </Link>
 
-            <Link
-              className='button button--secondary button--lg'
-              to='/blog/tags'
-            >
-              Tags
+            <Link className='button button--secondary button--lg' to='/blog/tags'>
+              Blog Tags
             </Link>
           </div>
         </div>

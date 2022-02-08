@@ -1,5 +1,5 @@
 ---
-slug: 34-media-library-manage=images
+slug: 34-media-library-manage-images
 title: 34. Media Library - Manage Images
 authors: peter
 tags: [timestamp conversion]
@@ -29,17 +29,11 @@ We are going to need a bunch of things from the store to support managing an ima
 import { connect } from 'react-redux';
 
 import AdminPropertyImage from '../../../../components/admin/AdminProperty/AdminPropertyImage/AdminPropertyImage';
-import {
-  imageFetch,
-  imageUpdate,
-  imageDelete,
-} from '../../../../shared/redux/actions/images';
+import { imageFetch, imageUpdate, imageDelete } from '../../../../shared/redux/actions/images';
 import { fetchSettings } from '../../../../shared/redux/actions/settings';
 
 const mapStateToProps = (state, ownProps) => ({
-  image: state.images.images.filter(
-    (image) => image.id === ownProps.match.params.imageId
-  )[0],
+  image: state.images.images.filter((image) => image.id === ownProps.match.params.imageId)[0],
   loadingImages: state.images.loading,
   errorImages: state.images.error,
   settings: state.settings.settings,
@@ -112,17 +106,7 @@ Note that in addition to the read-only metadata component we are using the Uploa
 ```jsx title="AdminPropertyImage.jsx"
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Button,
-  Header,
-  Dimmer,
-  Loader,
-  Container,
-  Image,
-  Grid,
-  Segment,
-  Confirm,
-} from 'semantic-ui-react';
+import { Button, Header, Dimmer, Loader, Container, Image, Grid, Segment, Confirm } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import UploadImageForm from '../AdminPropertyImages/UploadImage/UploadImageForm';
@@ -207,11 +191,7 @@ export default function AdminPropertyImage({
                 <Grid.Column>
                   <Segment>
                     <Header content='Configurable metadata' size='medium' />
-                    <UploadImageForm
-                      isUpload={false}
-                      image={image}
-                      imageUpdate={boundImageUpdate}
-                    />
+                    <UploadImageForm isUpload={false} image={image} imageUpdate={boundImageUpdate} />
                   </Segment>
                   <Button
                     color='red'
@@ -219,9 +199,7 @@ export default function AdminPropertyImage({
                     basic
                     compact
                     size='tiny'
-                    onClick={() =>
-                      setDeleteImageConfirmOpen(!deleteImageConfirmOpen)
-                    }
+                    onClick={() => setDeleteImageConfirmOpen(!deleteImageConfirmOpen)}
                   >
                     Delete image?
                   </Button>
