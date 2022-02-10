@@ -1,3 +1,9 @@
+---
+title: Firebase & Google Cloud
+description: Links to blog posts, code, etc related to building serverless, cloud native, applications with Firebase & Google Cloud
+hide_table_of_contents: false
+---
+
 # Firebase & Google Cloud
 
 There are lots of examples of how to use various bits from Firebase throughout the [Media Library project](/media-library).

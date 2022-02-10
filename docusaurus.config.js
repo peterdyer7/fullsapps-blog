@@ -7,8 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'FullsApps',
-  tagline:
-    'Fullstack Applications development, with React (web and mobile/native) front-ends and serverless, cloud based (AWS, Firebase/Google) back-ends',
+  tagline: 'Fullstack, cloud native, serverless, application development',
   url: 'https://fullsapps.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -25,17 +24,18 @@ const config = {
         pages: {
           remarkPlugins: [require('mdx-mermaid')],
         },
+        docs: false,
         blog: {
           path: './blog',
-          routeBasePath: 'blog',
+          routeBasePath: '/blog',
           blogTitle: 'FullsApps - Fullstack, Applications - blog!',
-          blogDescription:
-            'Fullstack Applications development, with React (web and mobile/native) front-ends and serverless, cloud based (AWS, Firebase/Google) back-ends',
+          blogDescription: 'Toughts on fullstack, cloud native, serverless, application development',
           showReadingTime: true,
           editUrl: 'https://github.com/peterdyer7/fullsapps-blog/tree/main/',
           feedOptions: {
             type: 'all',
             title: 'FullsApps Feed',
+            description: 'Fullstack, cloud native, serverless, application development',
             copyright: `Copyright © ${new Date().getFullYear()} FullsApps`,
             language: 'en',
           },
@@ -77,12 +77,12 @@ const config = {
             ],
           },
           {
-            href: '/markdown-page',
+            href: '/profile',
             label: 'Profile',
             position: 'left',
           },
           {
-            href: '/markdown-page',
+            href: '/projects',
             label: 'Projects',
             position: 'left',
           },
@@ -95,7 +95,24 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [],
+        links: [
+          {
+            label: 'Blog Archive',
+            to: '/blog/archive',
+          },
+          {
+            label: 'Blog Tags',
+            to: '/blog/tags',
+          },
+          {
+            label: 'RSS',
+            href: 'https://fullsapps.com/blog/rss.xml',
+          },
+          {
+            label: 'Atom',
+            href: 'https://fullsapps.com/blog/atom.xml',
+          },
+        ],
         copyright: `Copyright © ${new Date().getFullYear()} FullsApps, Built with Docusaurus.`,
       },
       prism: {

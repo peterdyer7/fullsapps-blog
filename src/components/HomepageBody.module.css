@@ -2,3 +2,10 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+  width: 100%;
+}

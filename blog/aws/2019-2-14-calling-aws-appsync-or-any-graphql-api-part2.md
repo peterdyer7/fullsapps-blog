@@ -1,11 +1,11 @@
 ---
-slug: calling-aws-appsync-or-any-graphql-api-2
-title: Calling AWS AppSync, or any GraphQL API, from AWS Lambda, part 1
+slug: calling-aws-appsync-or-any-graphql-api-part2
+title: Calling AWS AppSync, or any GraphQL API, from AWS Lambda, part 2
 authors: peter
 tags: [AWS Amplify, AWS AppSync, AWS Cognito, AWS Lambda]
 ---
 
-In this post we are going to rewrite the Function we created in [part 1](calling-aws-appsync-or-any-graphql-api) but in this post our API will use AWS Cognito for authentication (as opposed to an api key). Our scenario is the same as part 1 and we will use the same GraphQL client (graphql-request).
+In this post we are going to rewrite the Function we created in [part 1](/blog/calling-aws-appsync-or-any-graphql-api) but in this post our API will use AWS Cognito for authentication (as opposed to an api key). Our scenario is the same as part 1 and we will use the same GraphQL client (graphql-request).
 
 <!--truncate-->
 

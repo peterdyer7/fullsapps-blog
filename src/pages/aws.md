@@ -1,3 +1,9 @@
+---
+title: AWS
+description: Links to blog posts, videos, code, etc related to building serverless, cloud native, applications with AWS
+hide_table_of_contents: false
+---
+
 # AWS
 
 ## Bootstrapping applications using AWS Amplify with AWS AppSync
@@ -25,7 +31,7 @@ From the [Serverless Toronto Meetup January 29, 2019](https://www.meetup.com/Ser
 ## Calling AWS Appsync, or any GraphQL API, from AWS Lambda
 
 [Blog Post - Part 1 (API key)](blog/calling-aws-appsync-or-any-graphql-api)  
-[Blog Post - Part 2 (Cognito)](blog/calling-aws-appsync-or-any-graphql-api-2)  
+[Blog Post - Part 2 (Cognito)](blog/calling-aws-appsync-or-any-graphql-api-part2)  
 [Blog Post - Amplify Auth Pattern (one example)](blog/aws-amplify-authorization-pattern)
 
 ## Overriding Amplify Auto Generated AppSync Resolvers

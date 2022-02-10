@@ -1,8 +1,14 @@
+---
+title: Media Library
+description: Media Library is a blog series that demostrates how to create a fullstack web application using React and Google Firebase
+hide_table_of_contents: false
+---
+
 # Media Library
 
 Update: October, 2021
 
-Media Library was created 3 years ago. The technology and the thought process discussed throughout the posts are still relevant. There a few key things that I would do differently if I were starting the project today.
+Media Library was originally created in 2018. The technology and the thought process discussed throughout the posts are still relevant. There a few key things that I would do differently if I were starting the project today.
 
 1. Typescript - I only work in Typescript today, no more Javascript.
 2. API - I worked with backend libraries in the client code throughout the project. Today, I'm strict about separating client and server with an API.

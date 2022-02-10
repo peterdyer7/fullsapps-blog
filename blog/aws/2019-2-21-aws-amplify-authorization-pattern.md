@@ -19,7 +19,7 @@ In order to use @auth there are some prerequisites.
 2. API - we must be using AWS AppSync (GraphQL) for our API from Amplify as outlined here (amplify add api): https://aws-amplify.github.io/docs/js/api.
 3. We must be using the @model directive to tie our API to an AWS DynamoDB backend as outlined here: https://aws-amplify.github.io/docs/cli/graphql#model.
 
-Fortunately, these prerequisites represent a common pattern for using Amplify (we have followed this same pattern in other [posts](calling-aws-appsync-or-any-graphql-api-2).
+Fortunately, these prerequisites represent a common pattern for using Amplify (we have followed this same pattern in other posts, like [this one](/blog/calling-aws-appsync-or-any-graphql-api-part2).
 
 With our app setup per the prerequisites above we can use the @auth directive. This allows us to add authorization rules to the GraphQL schema we are already defining using the @model directive. Using the @auth directive we can accomplish a lot with very little code.
 
@@ -65,7 +65,7 @@ The Admins group is a group that I have manually created in Cognito in the user 
 
 The last key part is to have this service account include the username of the user that should own the data in the owner field. It's worth noting that if we do include an owner in the owner field the resolvers we discussed above will not attempt to replace it (which is exactly what we want). We can treat the owner field as we would any other field.
 
-Example of including owner when creating data (this sample follows what we created in this [post](/blog/calling-aws-appsync-or-any-graphql-api-2):
+Example of including owner when creating data (this sample follows what we created in this [post](/blog/calling-aws-appsync-or-any-graphql-api-part2):
 
 ```js
 const mutation = `

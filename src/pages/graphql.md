@@ -1,3 +1,9 @@
+---
+title: GraphQL
+description: Links to blog posts, code, etc related to using GraphQL
+hide_table_of_contents: false
+---
+
 # GraphQL
 
 ## AWS AppSync
